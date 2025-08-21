@@ -4,12 +4,10 @@ import { useEffect, useState } from "react";
 const API = () => {
 
     const [dogImage, setDogImage] = useState({});
-    const resultText = [
-        {wrong: "You clicked the wrong button! You lost! Try again!"},
-        {right: "You clicked the right button! You won! Here is a dog image:"},
-    ];
-
-    /*const [] = useState(false);*/
+    const [resultText, setResultText] = useState({
+        wrong: "You lost! Try again!",
+        right: "You won! Here is a dog image:",
+});
 
     const fetchData = async () => {
         try {
@@ -24,27 +22,29 @@ const API = () => {
         }
     };
 
+    
+
+    
+    const [youLost, setYouLost] = useState(false);
+        
+    const [youWon, setYouWon] = useState(false);
+
     const [generateText, setGenerateText] = useState("");
 
     /*const generateDogImage = () => {
         fetchData();
         
     };*/
-
-    
-    const [youLost, setYouLost] = useState(false);
-        
-    const [youWon, setYouWon] = useState(false);
     
     const clickWrong = () => {
         setYouLost(true);
         setYouWon(false);
-        /*setGenerateText(resultText.wrong);*/
+        setGenerateText(resultText.wrong);
     };
     const clickRight = () => {
         setYouWon(true);
         setYouLost(false);
-        /*setGenerateText(resultText.right);*/
+        setGenerateText(resultText.right);
         fetchData();
     };
 
@@ -59,7 +59,7 @@ const API = () => {
 
             
 
-            <p></p>
+            <p>{generateText}</p>
             <img src={dogImage.message}/>
             
         </div>
