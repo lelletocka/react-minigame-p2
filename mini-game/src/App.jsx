@@ -1,17 +1,24 @@
-import { useState } from 'react'
-import API from './components/API'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/login.jsx";
+import CreateAccount from "./pages/CreateAccount.jsx";
+import Game from "./pages/Game.jsx";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      <div>
-        <API />
-      </div> 
-    </> 
+      <BrowserRouter>
+        
+        <Routes>
+          <Route path="/" element={<CreateAccount />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/game" element={<Game />} />
+        </Routes> 
+      </BrowserRouter>
+    </>  
   )
 }
 
-export default App
+export default App;
