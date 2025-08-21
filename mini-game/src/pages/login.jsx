@@ -20,6 +20,7 @@ const Login = () => {
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 placeholder="username"
+                required
             /><br />
             <label htmlFor="login-pass">Password: </label>
             <input
@@ -28,6 +29,7 @@ const Login = () => {
                 value={userPass}
                 onChange={(e) => setUserPass(e.target.value)}
                 placeholder="password"
+                required
             /><br />
             <button>LOGIN</button>
             <p>Don't have an account?</p>

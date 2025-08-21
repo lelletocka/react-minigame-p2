@@ -6,11 +6,23 @@ const Storage = () => {
     
     const [chooseName, setChooseName] = useState("");
     const [choosePass, setChoosePass] = useState("");
+    
+    /*const [regComment, setRegComment] = useState({
+            unregged: "Already have an account?",
+            regged: "Account created! Continue to: ",
+    });*/
+
+    const [generateComment, setGenerateComment] = useState(false);
 
     const addAccount = () => {
         localStorage.setItem("username", chooseName);
         localStorage.setItem("password", choosePass);
-    }
+        setChooseName("");
+        setChoosePass(""); 
+        setGenerateComment(true);
+    };
+
+   
 
 
     return (
@@ -24,7 +36,7 @@ const Storage = () => {
                 value={chooseName}
                 onChange={(e) => setChooseName(e.target.value)}
                 placeholder="username"
-                
+                required
             /><br />
             <label htmlFor="reg-pass">Create a password: </label>
             <input
@@ -34,11 +46,12 @@ const Storage = () => {
                 value={choosePass}
                 onChange={(e) => setChoosePass(e.target.value)}
                 placeholder="password"
-                
+                required
             /><br />
-            <button>CREATE ACCOUNT</button>
-            <p>Already have an account? </p>
-            <Link to="/login ">Login here</Link>
+            <button onClick={addAccount}>CREATE ACCOUNT</button>
+            
+             <p>{generateComment ? "Account created! Continue to: " : "Already have an account? "}</p>
+            <Link to="/login ">Login</Link>
 
         </div>
 
