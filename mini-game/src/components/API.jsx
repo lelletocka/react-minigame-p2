@@ -31,10 +31,6 @@ const API = () => {
 
     const [generateText, setGenerateText] = useState("");
 
-    /*const generateDogImage = () => {
-        fetchData();
-        
-    };*/
     
     const clickWrong = () => {
         setYouLost(true);
