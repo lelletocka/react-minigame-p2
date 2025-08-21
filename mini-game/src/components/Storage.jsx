@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 
 const Storage = () => {
     
@@ -14,26 +15,31 @@ const Storage = () => {
 
     return (
         <div>
-            <h1>Create account</h1>
-            <label for="reg-name">Choose a username: </label>
+            <h2>Create account</h2>
+            <label htmlFor="reg-name">Create a username: </label>
             <input
                 id="reg-name"
+                name="reg-name"
                 type="text"
                 value={chooseName}
                 onChange={(e) => setChooseName(e.target.value)}
                 placeholder="username"
                 
-            />
-            <label for="reg-pass">Choose a password: </label>
+            /><br />
+            <label htmlFor="reg-pass">Create a password: </label>
             <input
                 id="reg-pass"
+                name="reg-pass"
                 type="text"
                 value={choosePass}
                 onChange={(e) => setChoosePass(e.target.value)}
                 placeholder="password"
                 
-            />
-            <button>Create</button>
+            /><br />
+            <button>CREATE ACCOUNT</button>
+            <p>Already have an account? </p>
+            <Link to="/login ">Login here</Link>
+
         </div>
 
     );

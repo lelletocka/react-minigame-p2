@@ -48,7 +48,7 @@ const API = () => {
 
     return (
         <div>
-            <h1>Dog Image Game</h1>
+            <h1>The Game</h1>
             <p>Click the right button to generate random dog image:</p>
             <button onClick={clickWrong}>Wrong button</button>
             <button onClick={clickRight}>Right button</button>

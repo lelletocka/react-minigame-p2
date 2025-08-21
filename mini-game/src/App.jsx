@@ -9,8 +9,9 @@ function App() {
 
   return (
     <>
+      
       <BrowserRouter>
-        
+      <h1>The Dog Image Game</h1>
         <Routes>
           <Route path="/" element={<CreateAccount />} />
           <Route path="/login" element={<Login />} />
@@ -18,7 +19,7 @@ function App() {
         </Routes> 
       </BrowserRouter>
     </>  
-  )
+  );
 }
 
 export default App;

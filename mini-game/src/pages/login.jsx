@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 
 
 const Login = () => {
@@ -11,27 +12,30 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Login</h1>
-            <label for="login-name">Username: </label>
+            <h2>Login</h2>
+            <label htmlFor="login-name">Username: </label>
             <input
                 id="login-name"
                 type="text"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 placeholder="username"
-            />
-            <label for="login-pass">Password: </label>
+            /><br />
+            <label htmlFor="login-pass">Password: </label>
             <input
                 id="login-pass"
                 type="text"
                 value={userPass}
                 onChange={(e) => setUserPass(e.target.value)}
                 placeholder="password"
-            />
-            <button>Login</button>
+            /><br />
+            <button>LOGIN</button>
+            <p>Don't have an account?</p>
+            <Link to="/ ">Create account for free</Link>
         </div>
 
     );
+    
 }
 
 export default Login;

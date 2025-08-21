@@ -5,9 +5,12 @@ const CreateAccount = () => {
 
     return (
         <div>
+            
             <Storage />
+            
+            
         </div>
-    )
+    );
 
 
 }
